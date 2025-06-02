@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 3 - MotorScrubber</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  (() => {
+    const saved = localStorage.getItem('theme');
+    const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if ((saved ?? (prefers ? 'dark' : 'light')) === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+  </script>
+</head>
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+  <header>
+    <h1>Project 3 - MotorScrubber</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+  <main class="project-page-layout">
+    <div class="project-images">
+      <div class="video-container">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/bE0AGoCKZlU" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+      <div class="image-grid">
+        <img src="media/Project 3 - MotorScrubber/image (1).jpg" alt="MotorScrubber project visual 1" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (1).png" alt="MotorScrubber project visual 2" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (2).jpg" alt="MotorScrubber project visual 3" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (2).png" alt="MotorScrubber project visual 4" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (3).png" alt="MotorScrubber project visual 5" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (4).png" alt="MotorScrubber project visual 6" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (5).png" alt="MotorScrubber project visual 7" loading="lazy" width="..." height="...">
+        <img src="media/Project 3 - MotorScrubber/image (6).png" alt="MotorScrubber project visual 8" loading="lazy" width="..." height="...">
+      </div>
+    </div>
+    <div class="project-description">
+      <h2>About MotorScrubber</h2>
+      <p>Project: Product Animation & Advertising Renders<br>
+      Role: 3D Generalist<br>
+      Company: MotorScrubber</p>
+      <p>At MotorScrubber, I worked as the sole 3D artist, creating high-quality visuals of their cleaning products for use across print, digital, and promotional campaigns. I collaborated closely with the in-house graphic designer to make sure everything aligned with the brand's visual identity and marketing strategy.</p>
+      <p>The standout project was a full product showcase animation for their floor-cleaning tool, BLADE. It was my first major job outside university and a full-pipeline challenge including storyboarding, animatics, pre-vis, animation, lighting, and rendering. I handled every stage myself. It was demanding, fast-paced, and a huge step forward in terms of experience.</p>
+      <p>That project taught me how to carry a piece from concept through to delivery. It was a pivotal moment early in my career. You can find more about the company at <a href="https://motorscrubberclean.com" target="_blank">motorscrubberclean.com</a>.</p>
+    </div>
+  </main>
+  <footer>
+    <div class="contact-info-footer">
+      <p>Liam Roder</p>
+      <p>Hackney, London | 07388 839427 | <a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+    </div>
+    <p>&copy; 2024 Liam's Website</p>
+  </footer>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="full view">
+  </div>
+  <script defer src="theme.js"></script>
+  <script defer src="lightbox.js"></script>
+</body>
+</html> 

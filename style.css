@@ -1,0 +1,1073 @@
+@font-face {
+  font-family: 'ArialRoundedMTBold';
+  src: url('media/fonts/arialroundedmtbold.ttf') format('truetype');
+  font-weight: normal; /* Assuming it's a regular weight, adjust if it's specifically bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ArialRoundedMTProCyr';
+  src: url('media/Fonts/arialroundedmtprocyr_bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* Light Mode Palette (current colors as defaults) */
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --font-family-primary: 'ArialRoundedMTBold', sans-serif; /* For titles - reverted to original/old font */
+  --font-family-body-text: 'ArialRoundedMTProCyr', sans-serif; /* For normal text - the new font */
+  --header-bg: #2c3e50;
+  --header-text: #ecf0f1;
+  --header-link-hover: #1abc9c;
+  --main-bg: #ffffff;
+  --main-shadow: rgba(0,0,0,0.08);
+  --card-bg: #fff;
+  --card-shadow: rgba(0,0,0,0.1);
+  --card-hover-shadow: rgba(0,0,0,0.15);
+  --section-title-color: #34495e;
+  --link-color: #007acc;
+  --link-hover-color: #0056b3;
+  --border-color: #e0e0e0;
+  --contact-info-bg: #f9f9f9;
+  --image-border-color: #ddd;
+  --image-shadow: rgba(0,0,0,0.05);
+}
+
+.dark-mode {
+  /* Dark Mode Palette */
+  --bg-color: #1a1a1a; /* Very dark grey, almost black */
+  --text-color: #e0e0e0; /* Light grey for text */
+  --header-bg: #1f1f1f; /* Slightly lighter than body bg */
+  --header-text: #d0d0d0;
+  --header-link-hover: #2ecc71; /* Brighter green for hover */
+  --main-bg: #2c2c2c; /* Dark grey for main content blocks */
+  --main-shadow: rgba(0,0,0,0.4);
+  --card-bg: #333333; /* Darker grey for cards */
+  --card-shadow: rgba(0,0,0,0.3);
+  --card-hover-shadow: rgba(0,0,0,0.5);
+  --section-title-color: #b0b0b0; /* Lighter grey for section titles */
+  --link-color: #3498db; /* Brighter blue for links */
+  --link-hover-color: #5dade2;
+  --border-color: #444444; /* Darker borders */
+  --contact-info-bg: #252525; /* Dark background for contact info box */
+  --image-border-color: #555555;
+  --image-shadow: rgba(255,255,255,0.05);
+}
+
+body {
+  font-family: var(--font-family-body-text);
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-primary);
+}
+
+h1, h2 {
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.image-grid {
+  column-count: 4;
+  column-gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+}
+
+.image-grid img {
+  width: 80%;
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto 15px auto;
+  display: block;
+  border-radius: 8px;
+  break-inside: avoid;
+  box-shadow: 0 2px 5px var(--card-shadow);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Styling for FEATURED IMAGES (non-square, larger) */
+.image-grid img.image-featured {
+  width: 95%; /* Take up more column width than regular images */
+  max-width: 300px; /* Allow them to be larger than regular images, adjust as needed */
+  /* Aspect ratio will be maintained by height: auto */
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+/* VIDEOS (.grid-video and .video-container) within .image-grid */
+.image-grid .grid-video,
+.image-grid .video-container {
+    width: 100%; 
+    margin-bottom: 15px;
+    break-inside: avoid;
+}
+
+video,
+.grid-video {
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+  .image-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-grid {
+    column-count: 1;
+  }
+}
+
+/* Star Projects Grid */
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.project-item {
+  width: clamp(280px, 30%, 350px);
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  padding: 15px;
+  background-color: var(--card-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--card-hover-shadow);
+}
+
+.project-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: contain; /* Ensure image scales down within bounds */
+  max-height: 200px; /* Optional: constrain image height if needed, adjust value */
+}
+
+.project-item p {
+  margin-top: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+/* Project Page Layout */
+.project-page-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.project-images {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-images img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--image-border-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px var(--image-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-description {
+  flex: 1 1 500px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.project-description h2 {
+  margin-top: 0;
+  color: var(--link-color);
+  text-align: left;
+}
+
+.project-description p {
+  text-align: left;
+}
+
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.2em 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header nav a {
+  color: var(--header-text);
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--header-link-hover);
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: var(--main-bg);
+  box-shadow: 0 4px 12px var(--main-shadow);
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  margin-top: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure global h1, h2 styles don't override project specific ones too much or are harmonious */
+h1, h2 {
+  /* General h1,h2 from before might be too aggressive or conflict, adjust if needed */
+  /* color: #007acc; */ /* This was the old global color, now headers/project titles have their own */
+}
+
+/* Add a general container for sections if needed for consistent padding/margin */
+.content-section {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.content-section h1,
+.content-section h2 {
+  margin-bottom: 25px;
+  color: var(--section-title-color);
+  transition: color 0.3s ease;
+}
+
+.content-section h2 {
+  margin-bottom: 25px; /* Space below section titles */
+  color: var(--section-title-color); /* Consistent color for section titles */
+}
+
+/* Contact Info Styling */
+.contact-info-header {
+  margin: 20px auto 30px auto; /* Centered with auto margins */
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--contact-info-bg);
+  max-width: 500px; /* Limit width */
+  text-align: center; /* Center text inside the box */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-info-header p {
+  margin: 8px 0;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+.contact-info-header p a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.contact-info-header p a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.contact-info-footer {
+  margin-bottom: 15px; /* Space above the copyright */
+}
+
+.contact-info-footer p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+.contact-info-footer a {
+  color: var(--header-text); /* To match footer text color */
+  text-decoration: none;
+}
+
+.contact-info-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000; /* Ensure lightbox is above everything */
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1001; /* Ensure lightbox image is above the background */
+}
+
+.lightbox video {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1001;
+}
+
+.lightbox:after {
+  content: "×";
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1002; /* Ensure close button is above everything */
+}
+
+.lightbox.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dark-mode .lightbox {
+  background: rgba(0, 0, 0, 0.95); /* Even darker in dark mode */
+}
+
+/* Adding a toggle switch style */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: fixed; /* Or absolute, depending on where you want it */
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px; /* Adjusted height */
+  position: relative;
+  width: 50px; /* Adjusted width */
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 3px; /* Adjusted position */
+  content: "";
+  height: 18px; /* Adjusted size */
+  left: 3px; /* Adjusted position */
+  position: absolute;
+  transition: .4s;
+  width: 18px; /* Adjusted size */
+}
+
+input:checked + .slider {
+  background-color: var(--header-link-hover); /* Use a theme color */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Adjusted translation */
+}
+
+.slider.round {
+  border-radius: 24px; /* Adjusted for new height */
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.theme-switch-wrapper span {
+  margin-left: 8px;
+  color: var(--text-color);
+  font-size: 0.9em;
+}
+
+/* Adjustments for specific elements if needed */
+.dark-mode h1, .dark-mode h2 {
+    /* Example: if default h1,h2 color was too bright/dark after var(--text-color) or var(--section-title-color) */
+}
+
+.dark-mode .contact-info-header p a {
+  color: var(--link-color); /* Ensure dark mode link color is applied */
+}
+
+/* Ensure shadows on image-grid items are updated */
+.dark-mode .image-grid img {
+    box-shadow: 0 2px 5px var(--card-shadow);
+}
+
+/* Responsive YouTube Embed */
+.video-container {
+  position: relative;
+  width: 100%; /* Make it responsive to its parent */
+  max-width: 780px; /* A slightly larger max-width, adjust as needed */
+  margin: 30px auto; /* Center the container */
+  overflow: hidden;
+  background-color: #000; /* Background for letterboxing */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.video-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; /* Ensure no iframe border */
+  border-radius: 8px; /* Match container rounding */
+}
+
+/* General video tag styling if you still have local videos elsewhere */
+video,
+.grid-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  break-inside: avoid;
+}
+
+.dark-mode video,
+.dark-mode .grid-video {
+  box-shadow: 0 2px 5px var(--card-shadow);
+}
+
+.cv-download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--link-color);
+  color: var(--main-bg); /* Text color that contrasts with button background */
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cv-download-button:hover {
+  background-color: var(--link-hover-color);
+  color: var(--main-bg); /* Ensure text color remains contrasty on hover */
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.dark-mode .cv-download-button {
+    background-color: var(--link-color);
+    color: var(--bg-color); /* Ensure text color has good contrast in dark mode */
+}
+
+.dark-mode .cv-download-button:hover {
+    background-color: var(--link-hover-color);
+    color: var(--bg-color);
+}
+
+#my-work-section h1 {
+    margin-bottom: 30px; /* More space after the main "My Work" title */
+}
+
+#my-work-section h3 {
+  font-family: var(--font-family-primary);
+  color: var(--section-title-color);
+  text-align: center; /* Or left, depending on preference */
+  margin-top: 40px; /* Space above each category title */
+  margin-bottom: 20px; /* Space below each category title and before its grid */
+  font-size: 1.8em; /* Slightly larger for category titles */
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+  display: inline-block; /* To make border-bottom only span the text width if centered */
+}
+
+.dark-mode #my-work-section h3 {
+    border-bottom-color: var(--border-color); /* Ensure dark mode border color is used */
+}
+
+/* Two-column layout for My Work section */
+.my-work-columns-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  gap: 30px; /* Space between the two main columns */
+}
+
+.my-work-left-column {
+  flex: 1 1 45%; /* Allows left column to take up roughly half the space, can grow/shrink */
+  min-width: 300px; /* Minimum width before wrapping or squishing too much */
+}
+
+.my-work-right-column {
+  flex: 1 1 45%; /* Allows right column to take up roughly half the space */
+  min-width: 300px;
+}
+
+/* Adjust image grid columns within the new two-column layout if needed */
+.my-work-left-column .image-grid,
+.my-work-right-column .image-grid {
+  /* Removed specific column-count here, will inherit from general .image-grid or need new rules */
+  /* column-count: 2; */ 
+}
+
+@media (max-width: 900px) { 
+    .my-work-left-column .image-grid,
+    .my-work-right-column .image-grid {
+        /* Removed specific column-count */
+    }
+}
+
+@media (max-width: 768px) { 
+    .my-work-left-column .image-grid,
+    .my-work-right-column .image-grid {
+        /* Removed specific column-count */
+    }
+}
+
+@media (max-width: 600px) { 
+    .my-work-left-column .image-grid,
+    .my-work-right-column .image-grid {
+        /* Removed specific column-count */
+    }
+    /* Removed specific image sizing for single column nested grids */
+}
+
+/* Masonry Grid Specific Styles for Personal Work */
+#personal-work-masonry-grid {
+  /* Remove column-count properties, Masonry handles layout */
+  column-count: unset;
+  column-gap: unset;
+  /* Masonry will create a multi-column layout based on item widths and container width */
+  /* Add a little bottom margin if needed, though items have their own */
+  margin-bottom: 30px; 
+}
+
+/* Sizer element for Masonry columnWidth */
+#personal-work-masonry-grid .grid-sizer {
+  width: 23%; /* Example: for a 4-column feel on wider screens. Adjust as needed. */
+  /* (100% - (3 * gutter)) / 4 columns. E.g., (100 - (3*1.5%))/4 = ~23% if gutter is ~1.5% */
+}
+
+/* Individual items in the Masonry grid */
+#personal-work-masonry-grid .grid-item-masonry {
+  width: 23%; 
+  /* margin-bottom: 10px; */ /* Removed: Masonry gutter should handle spacing */
+  float: left; 
+}
+
+/* Images within Masonry items */
+#personal-work-masonry-grid .grid-item-masonry img {
+  display: block;
+  width: 100%; /* Image takes full width of its .grid-item-masonry container */
+  max-width: 100%; /* Override previous max-width for images in this grid */
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px var(--card-shadow);
+  cursor: pointer;
+}
+
+/* Featured images within Masonry (can be wider) */
+#personal-work-masonry-grid .grid-item-masonry img.image-featured {
+  /* For Masonry, if you want an item to be wider, its .grid-item-masonry container needs to be wider */
+  /* This specific rule for img.image-featured might not be needed if we size the container instead */
+}
+
+/* Sizing containers for featured items or videos to be wider in Masonry */
+#personal-work-masonry-grid .grid-item-masonry.featured-item-masonry, /* Add this class to .grid-item-masonry for featured images */
+#personal-work-masonry-grid .grid-item-masonry.video-wrapper-masonry { /* Videos can also be wider */
+  width: 48%; /* Example: for a 2-column feel for this item, taking up almost two sizer widths */
+  /* (100% - (1 * gutter)) / 2 columns. E.g. (100 - 1.5%)/2 = ~49.25% */
+}
+
+/* Ensure videos inside the wrapper take full width of their wrapper */
+#personal-work-masonry-grid .video-wrapper-masonry .grid-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+/* Clear floats if any other content follows directly after, though likely not needed if parent has overflow:hidden or is flex */
+#personal-work-masonry-grid::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* The rest of the .image-grid styles (for other sections) remain unchanged */
+.image-grid { 
+  column-count: 4;
+  column-gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+}
+
+.image-grid img {
+  width: 80%;
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto 15px auto;
+  display: block;
+  border-radius: 8px;
+  break-inside: avoid;
+  box-shadow: 0 2px 5px var(--card-shadow);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Styling for FEATURED IMAGES (non-square, larger) */
+.image-grid img.image-featured {
+  width: 95%; /* Take up more column width than regular images */
+  max-width: 300px; /* Allow them to be larger than regular images, adjust as needed */
+  /* Aspect ratio will be maintained by height: auto */
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+/* VIDEOS (.grid-video and .video-container) within .image-grid */
+.image-grid .grid-video,
+.image-grid .video-container {
+    width: 100%; 
+    margin-bottom: 15px;
+    break-inside: avoid;
+}
+
+video,
+.grid-video {
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+  .image-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-grid {
+    column-count: 1;
+  }
+}
+
+/* Star Projects Grid */
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.project-item {
+  width: clamp(280px, 30%, 350px);
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  padding: 15px;
+  background-color: var(--card-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--card-hover-shadow);
+}
+
+.project-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: contain; /* Ensure image scales down within bounds */
+  max-height: 200px; /* Optional: constrain image height if needed, adjust value */
+}
+
+.project-item p {
+  margin-top: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+/* Project Page Layout */
+.project-page-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.project-images {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-images img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--image-border-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px var(--image-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-description {
+  flex: 1 1 500px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.project-description h2 {
+  margin-top: 0;
+  color: var(--link-color);
+  text-align: left;
+}
+
+.project-description p {
+  text-align: left;
+}
+
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.2em 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header nav a {
+  color: var(--header-text);
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--header-link-hover);
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: var(--main-bg);
+  box-shadow: 0 4px 12px var(--main-shadow);
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  margin-top: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure global h1, h2 styles don't override project specific ones too much or are harmonious */
+h1, h2 {
+  /* General h1,h2 from before might be too aggressive or conflict, adjust if needed */
+  /* color: #007acc; */ /* This was the old global color, now headers/project titles have their own */
+}
+
+/* Add a general container for sections if needed for consistent padding/margin */
+.content-section {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.content-section h1,
+.content-section h2 {
+  margin-bottom: 25px;
+  color: var(--section-title-color);
+  transition: color 0.3s ease;
+}
+
+.content-section h2 {
+  margin-bottom: 25px; /* Space below section titles */
+  color: var(--section-title-color); /* Consistent color for section titles */
+}
+
+/* Contact Info Styling */
+.contact-info-header {
+  margin: 20px auto 30px auto; /* Centered with auto margins */
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--contact-info-bg);
+  max-width: 500px; /* Limit width */
+  text-align: center; /* Center text inside the box */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-info-header p {
+  margin: 8px 0;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+.contact-info-header p a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.contact-info-header p a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.contact-info-footer {
+  margin-bottom: 15px; /* Space above the copyright */
+}
+
+.contact-info-footer p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+.contact-info-footer a {
+  color: var(--header-text); /* To match footer text color */
+  text-decoration: none;
+}
+
+.contact-info-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Video Grid for Personal Work Videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 20px 0;
+}
+
+.video-grid-item {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px var(--card-shadow);
+  background-color: #000;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-grid-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+}
+
+.dark-mode .video-grid-item {
+  box-shadow: 0 2px 5px var(--card-shadow);
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Right column project grid layout */
+.right-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.right-column-grid-item {
+  margin-bottom: 30px;
+}
+
+.right-column-grid-item h3 {
+  margin-top: 0 !important;
+  text-align: center;
+  margin-bottom: 15px !important;
+  font-size: 1.5em !important;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+}
+
+.right-column-grid-item .image-grid {
+  column-count: 2;
+  column-gap: 10px;
+  margin-bottom: 0;
+}
+
+.right-column-grid-item .image-grid img,
+.right-column-grid-item .image-grid .grid-video {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .right-column-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .right-column-grid-item .image-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .right-column-grid-item .image-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-column-grid-item .image-grid {
+    column-count: 1;
+  }
+}

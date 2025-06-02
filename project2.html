@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2 - AKODA</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  (() => {
+    const saved = localStorage.getItem('theme');
+    const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if ((saved ?? (prefers ? 'dark' : 'light')) === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+  </script>
+</head>
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+  <header>
+    <h1>Project 2 - AKODA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+  <main class="project-page-layout">
+    <div class="project-images">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/MVlpViDrosk" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen loading="lazy" width="560" height="315">
+        </iframe>
+      </div>
+      <div class="image-grid">
+        <img src="media/Project 2 - Akoda/image (1).png" alt="AKODA project visual 1" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (4).png" alt="AKODA project visual 4" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (5).png" alt="AKODA project visual 5" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (6).png" alt="AKODA project visual 6" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (7).png" alt="AKODA project visual 7" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (8).png" alt="AKODA project visual 8" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (9).png" alt="AKODA project visual 9" loading="lazy" width="..." height="...">
+        <img src="media/Project 2 - Akoda/image (10).png" alt="AKODA project visual 10" loading="lazy" width="..." height="...">
+      </div>
+    </div>
+    <div class="project-description">
+      <h2>About AKODA</h2>
+      <p>Project: Akoda Studio – Educational Animation Series<br>
+      Role: 3D Generalist (Pre-vis, Layout, Modeling & Rendering)<br>
+      Studio: Akoda Studio</p>
+      
+      <p>At Akoda Studio, I worked with a talented team of artists to produce a series of educational animations focused on climate change, green energy, and emerging technologies. My main role was in pre-visualization and camera animation, helping shape scenes in ways that made complex ideas visually clear and compelling.</p>
+      
+      <p>A lot of my time went into layout, deciding how shots were framed and how scenes flowed to support the narrative. Beyond that, I took on a range of generalist tasks, from modeling and shading to lighting and rendering, always aiming for a balance between visual appeal and technical efficiency.</p>
+      
+      <p>It was a creatively demanding project, but also one of the most fulfilling. The team at Akoda Studio was sharp, supportive, and genuinely collaborative. You can see their work at <a href="https://akodastudio.com" target="_blank">akodastudio.com</a>.</p>
+    </div>
+  </main>
+  <footer>
+    <div class="contact-info-footer">
+      <p>Liam Roder</p>
+      <p>Hackney, London | 07388 839427 | <a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+    </div>
+    <p>&copy; 2024 Liam's Website</p>
+  </footer>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="full view">
+  </div>
+  <script defer src="theme.js"></script>
+  <script defer src="lightbox.js"></script>
+</body>
+</html> 

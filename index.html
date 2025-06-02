@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liam's Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carousel.css">
+  <script>
+  (() => {
+    const saved = localStorage.getItem('theme');
+    const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if ((saved ?? (prefers ? 'dark' : 'light')) === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+  </script>
+</head>
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+  <h1>Hello, I'm Liam</h1>
+  <p>This is my portfolio of 3D artworks.</p>
+
+  <div class="contact-info-header">
+    <p>Liam Roder</p>
+    <p>Hackney, London</p>
+    <p>07388 839427</p>
+    <p><a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+    <a href="media/documents/Liam Roder CV.pdf" download class="cv-download-button">Download CV</a>
+  </div>
+
+  <h2>My Demo Reel</h2>
+  <div class="video-container">
+    <iframe 
+      width="560" 
+      height="315" 
+      src="https://www.youtube.com/embed/lrNT6uhslZs" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+
+  <h2>Star Projects</h2>
+  <div class="projects-grid">
+    <div class="project-item">
+      <a href="project1.html">
+        <img src="media/Project 1 - Atticus Finch/19.jpg" alt="Project 1 - Atticus Finch">
+        <p><strong>Atticus Finch</strong></p>
+      </a>
+    </div>
+    <div class="project-item">
+      <a href="project2.html">
+        <img src="media/Project 2 - Akoda/image (7).png" alt="Project 2 - Akoda">
+        <p><strong>AKODA STUDIO</strong></p>
+      </a>
+    </div>
+    <div class="project-item">
+      <a href="project3.html">
+        <img src="media/Project 3 - MotorScrubber/image (2).jpg" alt="Project 3 - MotorScrubber">
+        <p><strong>MotorScrubber</strong></p>
+      </a>
+    </div>
+  </div>
+
+  <div class="content-section" id="my-work-section">
+    <h1>My Work</h1>
+    
+    <h3>Personal Work</h3>
+    <div class="carousel-container" id="personal-work-carousel">
+      <div class="carousel-track">
+        <div class="carousel-item"><img src="media/images/Personal Work/tumblr_365f85779d4a708e9c4e239fcd9d98a8_cde97526_1280.jpg" alt="Personal Work Image 1"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (1).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/tumblr_2ecd496dafa0e8a8e348e9ccd2468291_d0d99191_1280.jpg" alt="Personal Work Image 2"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (2).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/earth.jpg" alt="Personal Work Image 3"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (3).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/tumblr_be8fc71aaa387da37c132d67265157e9_22301e56_1280.jpg" alt="Personal Work Image 4"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (4).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/tumblr_d8800f03a98e9423119f0ee8bf5bef35_429c3405_500.png" alt="Personal Work Image 5"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (5).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/tumblr_54d4161d31244e883e94df35e5693056_6b8dce18_1280.jpg" alt="Personal Work Image 6"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (6).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/tumblr_a1722251e4c4c136001c2cb64f49be01_6a3309ef_1280.jpg" alt="Personal Work Image 7"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (7).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Personal Work/rock.png" alt="Personal Work Image 8"></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (8).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (9).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (10).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><video controls autoplay loop muted><source src="media/videos/Personal Work/video (11).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item"><img src="media/images/Uni Work/blue.jpg" alt="Uni Work Image 1"></div>
+        <div class="carousel-item"><video controls autoplay loop muted class="grid-video"><source src="media/videos/Uni Work/Liam Roder - 3D Generalist [690360861818241024].mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        <div class="carousel-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/MIS66wgn4jI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/tP8ukswVx00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-fade-left"></div>
+      <div class="carousel-fade-right"></div>
+      <div class="carousel-nav carousel-prev">‹</div>
+      <div class="carousel-nav carousel-next">›</div>
+    </div>
+
+    <h3>Freelance Work</h3>
+    <div class="carousel-container" id="freelance-work-carousel">
+      <div class="carousel-track">
+        <!-- Toy Car Project -->
+        <div class="carousel-item"><img src="media/images/Toy Car Project/firefox_5RBub48YSl.gif" alt="Toy Car Project Image 1"></div>
+        <div class="carousel-item"><img src="media/images/Toy Car Project/car.png" alt="Toy Car Project Image 2"></div>
+        <div class="carousel-item"><img src="media/images/Toy Car Project/tumblr_e974ffd33f5e859be6b0eed0f56e8111_b78628dc_1280.png" alt="Toy Car Project Image 3"></div>
+        <div class="carousel-item"><video controls autoplay loop muted class="grid-video"><source src="media/videos/Toy Car Project/tumblr_smf1efMBpI1yojeig.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+        
+        <!-- Nothing Ear(1) -->
+        <div class="carousel-item"><img src="media/images/Nothing Ear(1)/1.png" alt="Nothing Ear(1) Image 1"></div>
+        <div class="carousel-item"><img src="media/images/Nothing Ear(1)/2.png" alt="Nothing Ear(1) Image 2"></div>
+        <div class="carousel-item"><img src="media/images/Nothing Ear(1)/5.png" alt="Nothing Ear(1) Image 3"></div>
+        <div class="carousel-item"><img src="media/images/Nothing Ear(1)/6.png" alt="Nothing Ear(1) Image 4"></div>
+        
+        <!-- Freelance -->
+        <div class="carousel-item"><video controls autoplay loop muted class="grid-video"><source src="media/videos/Freelance/OurDotArt.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+      </div>
+      <div class="carousel-fade-left"></div>
+      <div class="carousel-fade-right"></div>
+      <div class="carousel-nav carousel-prev">‹</div>
+      <div class="carousel-nav carousel-next">›</div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="full view">
+  </div>
+
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    
+    // Update image click handlers to include carousel images
+    function initLightbox() {
+      const allImages = document.querySelectorAll('.image-grid img, .carousel-item img');
+      
+      allImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent carousel navigation when clicking images
+          lightbox.classList.add('visible');
+          lightboxImg.src = img.src;
+        });
+      });
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('visible');
+      lightboxImg.src = '';
+    });
+
+    // Dark Mode Toggle
+    const themeSwitch = document.getElementById('checkbox');
+    const themeSwitchText = document.querySelector('.theme-switch-wrapper span');
+    const currentTheme = localStorage.getItem('theme');
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.body.classList.add('dark-mode');
+        themeSwitch.checked = true;
+        themeSwitchText.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+        document.body.classList.remove('dark-mode');
+        themeSwitch.checked = false;
+        themeSwitchText.textContent = 'Dark Mode';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    if (currentTheme) {
+      setTheme(currentTheme);
+    } else {
+      setTheme('light');
+    }
+
+    themeSwitch.addEventListener('change', function() {
+      if(this.checked) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    });
+
+    // Carousel functionality
+    function initCarousel(carouselId, autoScrollDirection = 'right', autoScrollSpeed = 50) { // speed in px/second
+      const container = document.getElementById(carouselId);
+      if (!container) return;
+      const track = container.querySelector('.carousel-track');
+      if (!track) return;
+      const originalItems = Array.from(track.querySelectorAll('.carousel-item'));
+      const prevButton = container.querySelector('.carousel-prev');
+      const nextButton = container.querySelector('.carousel-next');
+
+      if (originalItems.length === 0) return;
+
+      const itemWidth = originalItems[0].offsetWidth + parseInt(window.getComputedStyle(originalItems[0]).marginRight || '0') * 2;
+      const visibleItemsCount = Math.floor(container.offsetWidth / itemWidth);
+      
+      // If not enough items to scroll, or no item width (e.g. hidden), do nothing.
+      if (originalItems.length <= visibleItemsCount || itemWidth === 0) {
+        if (prevButton) prevButton.style.display = 'none';
+        if (nextButton) nextButton.style.display = 'none';
+        return;
+      }
+
+      let currentXOffset = 0;
+      let animationFrameId;
+      let isHovering = false;
+      let lastFrameTime = performance.now();
+      let autoScrollTimeoutId;
+
+      // Clone items for seamless looping
+      const itemsToClone = Math.min(originalItems.length, Math.max(1, visibleItemsCount)); // Clone at least 1, up to visible
+
+      for (let i = 0; i < itemsToClone; i++) {
+        track.appendChild(originalItems[i].cloneNode(true));
+      }
+      for (let i = 0; i < itemsToClone; i++) {
+        track.insertBefore(originalItems[originalItems.length - 1 - i].cloneNode(true), track.firstElementChild);
+      }
+
+      const allItems = track.querySelectorAll('.carousel-item');
+      currentXOffset = -itemWidth * itemsToClone; // Start at the beginning of the original items
+      track.style.transition = 'none';
+      track.style.transform = `translateX(${currentXOffset}px)`;
+      void track.offsetWidth; // Force reflow
+      track.style.transition = ''; // Re-enable for button clicks
+
+      function runLazySusanAnimation(currentTime) {
+        if (isHovering) {
+          lastFrameTime = currentTime; // Keep time updated for smooth resume
+          animationFrameId = requestAnimationFrame(runLazySusanAnimation);
+          return; // Exit before any movement calculations or applications
+        }
+
+        const deltaTime = (currentTime - lastFrameTime) / 1000; // seconds
+        lastFrameTime = currentTime;
+        
+        // Calculate the potential new offset for *this frame only*
+        let newXOffsetThisFrame = currentXOffset;
+        if (autoScrollDirection === 'right') { // Items move left
+          newXOffsetThisFrame -= autoScrollSpeed * deltaTime;
+        } else { // Items move right
+          newXOffsetThisFrame += autoScrollSpeed * deltaTime;
+        }
+
+        // Determine the final offset after jump logic, based on newXOffsetThisFrame
+        let finalProposedXOffset = newXOffsetThisFrame;
+        let jumped = false;
+        const originalItemsTotalWidth = itemWidth * originalItems.length;
+
+        if (autoScrollDirection === 'right') {
+          if (finalProposedXOffset <= -(itemWidth * itemsToClone + originalItemsTotalWidth)) {
+            finalProposedXOffset += originalItemsTotalWidth;
+            jumped = true;
+          }
+        } else { // autoScrollDirection === 'left'
+          if (finalProposedXOffset >= -itemWidth * (itemsToClone - 1e-9)) { // Check if we've scrolled past prepended clones
+            finalProposedXOffset -= originalItemsTotalWidth;
+            jumped = true;
+          }
+        }
+
+        // CRITICAL: Before committing this frame's movement, check if a hover has started.
+        if (isHovering) {
+          // If hover started during this frame's calculations, discard the calculated movement.
+          // currentXOffset remains unchanged from the previous frame.
+          // The transform also remains as it was.
+          animationFrameId = requestAnimationFrame(runLazySusanAnimation);
+          return;
+        }
+
+        // If still not hovering, commit the movement for this frame.
+        currentXOffset = finalProposedXOffset; // Update the true state
+
+        // Apply the transform based on the new currentXOffset
+        if (jumped) {
+          track.style.transition = 'none'; // Apply jump instantly
+          track.style.transform = `translateX(${currentXOffset}px)`;
+          void track.offsetWidth; // force reflow to apply the new position without transition
+          track.style.transition = ''; // Restore for manual nav or other transitions
+        } else {
+          track.style.transform = `translateX(${currentXOffset}px)`;
+        }
+        
+        animationFrameId = requestAnimationFrame(runLazySusanAnimation);
+      }
+
+      function startAutoScroll(delay = 0) {
+        stopAutoScroll();
+
+        const primeAndStartAnimationLoop = () => {
+          // This first rAF call is just to get a proper timestamp for lastFrameTime
+          requestAnimationFrame(function primeFrame(timestamp) {
+            if (isHovering && delay > 0) { // If mouse re-entered during the delay, don't start
+                return;
+            }
+
+            // Re-sync currentXOffset with the actual visual position before resuming
+            const currentTransformValue = window.getComputedStyle(track).transform;
+            if (currentTransformValue && currentTransformValue !== 'none') {
+              // transform can be 'matrix(a, b, c, d, tx, ty)' or 'matrix3d(...)'
+              // For 2D matrix: matrix(1, 0, 0, 1, tx, 0) -> tx is the 5th value (index 4)
+              // For 3D matrix: matrix3d(1,0,0,0, 0,1,0,0, 0,0,1,0, tx,ty,tz,1) -> tx is 13th value (index 12)
+              const matrixValues = currentTransformValue.match(/matrix(?:3d)?\((.+)\)/);
+              if (matrixValues && matrixValues[1]) {
+                const M = matrixValues[1].split(', ').map(parseFloat);
+                if (M.length === 6) { // 2D matrix
+                  currentXOffset = M[4];
+                } else if (M.length === 16) { // 3D matrix
+                  currentXOffset = M[12];
+                }
+                // If parsing failed or matrix type unknown, currentXOffset remains as is (less ideal)
+              }
+            }
+            // If transform is 'none' or unparsable, currentXOffset from before pause is used.
+
+            lastFrameTime = timestamp;
+            // Now that lastFrameTime is primed & currentXOffset synced, start the actual animation loop
+            animationFrameId = requestAnimationFrame(runLazySusanAnimation);
+          });
+        };
+
+        if (delay > 0) {
+          autoScrollTimeoutId = setTimeout(primeAndStartAnimationLoop, delay);
+        } else {
+          primeAndStartAnimationLoop(); // For initial start
+        }
+      }
+
+      function stopAutoScroll() {
+        cancelAnimationFrame(animationFrameId);
+        clearTimeout(autoScrollTimeoutId);
+      }
+
+      function handleManualNavigation(direction) {
+        stopAutoScroll();
+        isHovering = true; // Effectively pause auto-scroll logic during manual nav
+
+        if (direction === 'next') {
+          currentXOffset -= itemWidth;
+        } else { // prev
+          currentXOffset += itemWidth;
+        }
+
+        track.style.transition = 'transform 0.4s ease-in-out';
+        track.style.transform = `translateX(${currentXOffset}px)`;
+
+        const transitionEndHandler = () => {
+          track.removeEventListener('transitionend', transitionEndHandler);
+          track.style.transition = 'none';
+
+          const originalItemsTotalWidth = itemWidth * originalItems.length;
+          // Check for jump after manual scroll (next)
+          if (currentXOffset <= -(itemWidth * itemsToClone + originalItemsTotalWidth)) {
+            currentXOffset += originalItemsTotalWidth;
+            track.style.transform = `translateX(${currentXOffset}px)`;
+          }
+          // Check for jump after manual scroll (prev)
+          if (currentXOffset >= -itemWidth * (itemsToClone - 1e-9) ) { 
+            currentXOffset -= originalItemsTotalWidth;
+            track.style.transform = `translateX(${currentXOffset}px)`;
+          }
+          void track.offsetWidth; // reflow
+          track.style.transition = ''; // for future button clicks or auto-scroll
+          isHovering = false; // Resume auto-scroll logic
+          startAutoScroll(1500); // Resume auto-scroll after a short delay
+        };
+        track.addEventListener('transitionend', transitionEndHandler);
+         // Fallback if transitionend doesn't fire (e.g. no actual change)
+        setTimeout(() => {
+            if (track.style.transition !== 'none') { // If handler hasn't reset it
+                transitionEndHandler();
+            }
+        }, 450);
+      }
+
+      if (prevButton) prevButton.addEventListener('click', () => handleManualNavigation('prev'));
+      if (nextButton) nextButton.addEventListener('click', () => handleManualNavigation('next'));
+
+      container.addEventListener('mouseenter', () => {
+        isHovering = true;
+        stopAutoScroll(); // Cancels future animation frames & pending start timeouts
+
+        // Force immediate stop at current visual position
+        const currentTransform = window.getComputedStyle(track).transform;
+        track.style.transition = 'none'; // Disable transitions for this immediate stop
+        track.style.transform = currentTransform;
+        void track.offsetWidth; // Force reflow to apply the style immediately
+        // track.style.transition = ''; // Restore for manual nav if needed, but lazy susan doesn't use it.
+                                     // Manual nav will set its own transition.
+      });
+      container.addEventListener('mouseleave', () => {
+        isHovering = false;
+        startAutoScroll(1000); // Delay before resuming, now 1 second
+      });
+      
+      startAutoScroll(); // Initial start (delay 0)
+    }
+
+    // Initialize everything when the page loads
+    window.addEventListener('load', () => {
+      initCarousel('personal-work-carousel', 'right', 50); // 50px per second, items move left
+      initCarousel('freelance-work-carousel', 'left', 40); // 40px per second, items move right
+      initLightbox(); // Initialize lightbox functionality
+    });
+  </script>
+  <script defer src="theme.js"></script>
+  <script defer src="lightbox.js"></script>
+  <footer>
+    <div class="contact-info-footer">
+      <p>Liam Roder</p>
+      <p>Hackney, London | 07388 839427 | <a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+    </div>
+    <p>&copy; 2024 Liam's Website</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 - Atticus Finch</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  (() => {
+    const saved = localStorage.getItem('theme');
+    const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if ((saved ?? (prefers ? 'dark' : 'light')) === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+  </script>
+</head>
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+  <header>
+    <h1>Project 1 - Atticus Finch</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+  <main class="project-page-layout">
+    <div class="project-images">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/QQesznCqFks" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen loading="lazy" width="560" height="315">
+        </iframe>
+      </div>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/cBIPg52-IUg" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen loading="lazy" width="560" height="315">
+        </iframe>
+      </div>
+      <div class="image-grid">
+        <img src="media/Project 1 - Atticus Finch/11.png" alt="Environment shot from the Atticus Finch project" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/16.jpg" alt="Scene from the Atticus Finch animation" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/AF (1).jpg" alt="Atticus Finch project visual 1" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/AF (1).png" alt="Atticus Finch project visual 2" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/AF (2).jpg" alt="Atticus Finch project visual 3" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/AF (2).png" alt="Atticus Finch project visual 4" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/AF (3).jpg" alt="Atticus Finch project visual 5" loading="lazy" width="..." height="...">
+        <img src="media/Project 1 - Atticus Finch/19.jpg" alt="Atticus Finch project visual 6" loading="lazy" width="..." height="...">
+      </div>
+    </div>
+    <div class="project-description">
+      <h2>About Atticus Finch</h2>
+      <p>Project: Projection-Mapping Animation for Saudi Arabian Water Park<br>
+      Role: 3D Generalist (Environment & FX)<br>
+      Studio: Atticus Finch Ltd, London</p>
+      <p>I worked as a 3D generalist on a large-scale projection-mapping animation created for display on a mountain at a new water park in Saudi Arabia. The piece followed a whimsical story of a camel traveling through imaginative, character-filled landscapes.</p>
+      <p>My role involved building detailed environments, developing visual effects, and animating transitions between scenes. I focused especially on the transitions, using Blender's geometry nodes to create procedural sand systems that brought movement and texture to key moments.</p>
+      <p>One of the trickier challenges was designing modular environments that could repeat seamlessly while allowing scenes to flow naturally. This required a mix of experimentation and problem-solving. I worked closely with the art director and supervisor, regularly refining models, textures, and lighting based on feedback.</p>
+      <p>The project was technically demanding but deeply rewarding. The team at Atticus Finch was sharp, creative, and collaborative. I'd happily work with them again. Their work's worth checking out at <a href="https://atticusfinch.tv" target="_blank">atticusfinch.tv</a>.</p>
+      <p><em>Please note: The videos shown here highlight only the scenes I personally worked on and do not represent the complete animation, which is currently still in development.</em></p>
+    </div>
+  </main>
+  <footer>
+    <div class="contact-info-footer">
+      <p>Liam Roder</p>
+      <p>Hackney, London | 07388 839427 | <a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+    </div>
+    <p>&copy; 2024 Liam's Website</p>
+  </footer>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="full view">
+  </div>
+  <script defer src="theme.js"></script>
+  <script defer src="lightbox.js"></script>
+</body>
+</html> 

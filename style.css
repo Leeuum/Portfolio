@@ -2,14 +2,14 @@
   font-family: 'ArialRoundedMTBold';
   /* Corrected path to match case-sensitive "Fonts" directory */
   src: url('media/Fonts/arialroundedmtbold.ttf') format('truetype');
-  font-weight: normal; /* Assuming it's a regular weight, adjust if it's specifically bold */
+  font-weight: 700; /* bold weight to match heading styles */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ArialRoundedMTProCyr';
   src: url('media/Fonts/arialroundedmtprocyr_bold.otf') format('opentype');
-  font-weight: bold;
+  font-weight: 400; /* regular weight for body text */
   font-style: normal;
 }
 
@@ -59,6 +59,7 @@
 
 body {
   font-family: var(--font-family-body-text);
+  font-weight: 400;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -70,6 +71,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-primary);
+  font-weight: 700;
 }
 
 h1, h2 {

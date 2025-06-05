@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'ArialRoundedMTBold';
-  src: url('media/fonts/arialroundedmtbold.ttf') format('truetype');
+  /* Corrected path to match case-sensitive "Fonts" directory */
+  src: url('media/Fonts/arialroundedmtbold.ttf') format('truetype');
   font-weight: normal; /* Assuming it's a regular weight, adjust if it's specifically bold */
   font-style: normal;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Liam Roder Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  (() => {
+    const saved = localStorage.getItem('theme');
+    const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if ((saved ?? (prefers ? 'dark' : 'light')) === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+  </script>
+</head>
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox" aria-label="Toggle dark mode">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+  <h1>404 - Page Not Found</h1>
+  <p>The page you're looking for doesn't exist.</p>
+  <p><a href="index.html">Back to portfolio</a></p>
+  <footer>
+    <address class="contact-info-footer">
+      <p>Liam Roder</p>
+      <p>Leicester, UK | 07388 839427 | <a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+    </address>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Liam Roder</p>
+  </footer>
+  <script defer src="theme.js"></script>
+</body>
+</html>

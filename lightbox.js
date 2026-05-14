@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
 
@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox.addEventListener('click', () => {
     lightbox.classList.remove('visible');
     lightboxImg.src = '';
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('visible')) {
+      lightbox.classList.remove('visible');
+      lightboxImg.src = '';
+    }
   });
 
   initLightbox();

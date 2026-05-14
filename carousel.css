@@ -75,6 +75,8 @@
   width: 40px;
   height: 40px;
   background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -115,19 +117,6 @@
 
 .carousel-fade-right {
   right: 0;
-  background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
-}
-
-/* Dark mode adjustments */
-.dark-mode .carousel-item {
-  background-color: var(--bg-color);
-}
-
-.dark-mode .carousel-fade-left {
-  background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
-}
-
-.dark-mode .carousel-fade-right {
   background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
 }
 

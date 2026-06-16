@@ -560,6 +560,110 @@ video,
     border-bottom-color: var(--border-color); /* Ensure dark mode border color is used */
 }
 
+/* Smooth jumping for the in-page nav links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky site navigation (homepage) */
+.site-nav {
+  position: sticky;
+  top: 12px;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-bottom: 30px;
+  padding: 12px 130px 12px 24px; /* extra right padding clears the floating Dark Mode toggle */
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  transition: background-color 0.3s ease;
+}
+
+.nav-brand {
+  font-family: var(--font-family-primary);
+  font-weight: 700;
+  font-size: 1.2em;
+  color: var(--header-text);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-size: 1.05em;
+  transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+  color: var(--header-link-hover);
+}
+
+/* Offset anchor jumps so the target heading clears the sticky bar */
+#reel, #projects, #my-work-section, #contact {
+  scroll-margin-top: 80px;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 30px;
+}
+
+.hero .tagline {
+  font-size: 1.25em;
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* Contact section (now near the bottom) */
+.contact-section {
+  margin-top: 40px;
+}
+
+/* Tighter spacing on smaller screens */
+@media (max-width: 900px) {
+  body {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 18px;
+  }
+  .site-nav {
+    top: 8px;
+    padding-right: 24px;
+  }
+}
+
+/* Social icon button in the footer */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  color: var(--header-text);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--header-link-hover);
+  transform: translateY(-2px);
+}
+
 
 
 

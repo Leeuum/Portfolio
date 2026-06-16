@@ -9,6 +9,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.liamroder.com">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://www.liamroder.com/media/images/Personal%20Work/tumblr_be8fc71aaa387da37c132d67265157e9_22301e56_1280.jpg">
+  <meta name="twitter:image" content="https://www.liamroder.com/media/images/Personal%20Work/tumblr_be8fc71aaa387da37c132d67265157e9_22301e56_1280.jpg">
   <title>Liam Roder | 3D Artist Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="carousel.css">
@@ -30,17 +32,22 @@
     </label>
     <span>Dark Mode</span>
   </div>
-  <h1>Hello, I'm Liam</h1>
-  <p>This is my portfolio of 3D artworks.</p>
+  <nav class="site-nav">
+    <span class="nav-brand">Liam Roder</span>
+    <ul>
+      <li><a href="#reel">Reel</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#my-work-section">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <address class="contact-info-header">
-    <p>Liam Roder</p>
-    <p>07388 839427</p>
-    <p><a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
-    <a href="media/Documents/cv.pdf" download class="cv-download-button">Download CV</a>
-  </address>
+  <div class="hero">
+    <h1>Liam Roder</h1>
+    <p class="tagline">3D Artist specialising in environment design, animation, and visual effects.</p>
+  </div>
 
-  <h2>My Demo Reel</h2>
+  <h2 id="reel">My Demo Reel</h2>
   <div class="video-container">
     <iframe 
       width="560" 
@@ -54,7 +61,7 @@
     </iframe>
   </div>
 
-  <h2>Star Projects</h2>
+  <h2 id="projects">Star Projects</h2>
   <div class="projects-grid">
     <div class="project-item">
       <a href="project1.html">
@@ -145,6 +152,15 @@
     </div>
   </div>
 
+  <section class="contact-section" id="contact">
+    <h2>Get in touch</h2>
+    <address class="contact-info-header">
+      <p>Liam Roder</p>
+      <p><a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+      <a href="media/Documents/cv.pdf" download class="cv-download-button">Download CV</a>
+    </address>
+  </section>
+
   <div class="lightbox" id="lightbox">
     <img src="" alt="full view">
   </div>
@@ -155,7 +171,8 @@
   <footer>
     <div class="contact-info-footer">
       <p>Liam Roder</p>
-      <p>07388 839427 | <a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+      <p><a href="mailto:liamroder12@gmail.com">liamroder12@gmail.com</a></p>
+      <a href="https://www.instagram.com/leeeuuum/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
     </div>
     <p>&copy; <script>document.write(new Date().getFullYear())</script> Liam Roder</p>
   </footer>

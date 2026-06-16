@@ -123,8 +123,8 @@
       </div>
       <div class="carousel-fade-left"></div>
       <div class="carousel-fade-right"></div>
-      <button class="carousel-nav carousel-prev" aria-label="Previous slide">‹</button>
-      <button class="carousel-nav carousel-next" aria-label="Next slide">›</button>
+      <button class="carousel-nav carousel-prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+      <button class="carousel-nav carousel-next" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
     </div>
 
     <h3>Freelance Work</h3>
@@ -147,8 +147,8 @@
       </div>
       <div class="carousel-fade-left"></div>
       <div class="carousel-fade-right"></div>
-      <button class="carousel-nav carousel-prev" aria-label="Previous slide">‹</button>
-      <button class="carousel-nav carousel-next" aria-label="Next slide">›</button>
+      <button class="carousel-nav carousel-prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+      <button class="carousel-nav carousel-next" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
     </div>
   </div>
 
@@ -161,8 +161,11 @@
     </address>
   </section>
 
-  <div class="lightbox" id="lightbox">
-    <img src="" alt="full view">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close (Esc)">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+    <div class="lightbox-stage"></div>
+    <button class="lightbox-nav lightbox-next" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
   </div>
 
   <script defer src="carousel.js"></script>

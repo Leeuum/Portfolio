@@ -72,32 +72,95 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
+  width: 46px;
+  height: 46px;
   padding: 0;
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: white;
-  font-size: 24px;
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  opacity: 0;
   z-index: 10;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.25s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.carousel-container:hover .carousel-nav,
+.carousel-nav:focus-visible {
+  opacity: 1;
 }
 
 .carousel-nav:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.carousel-nav:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.carousel-nav svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .carousel-prev {
-  left: 10px;
+  left: 16px;
 }
 
 .carousel-next {
-  right: 10px;
+  right: 16px;
+}
+
+.dark-mode .carousel-nav {
+  color: #fff;
+  background: rgba(30, 30, 30, 0.6);
+}
+
+.dark-mode .carousel-nav:hover {
+  background: rgba(20, 20, 20, 0.9);
+}
+
+/* On touch devices there is no hover, so keep the arrows visible */
+@media (hover: none) {
+  .carousel-nav {
+    opacity: 1;
+  }
+}
+
+/* Carousel videos act as click-to-open thumbnails with a play badge */
+.carousel-item video {
+  cursor: pointer;
+}
+
+.carousel-item:has(video)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff"><path d="M8 5v14l11-7z"/></svg>') center / 22px no-repeat;
+  pointer-events: none;
+  z-index: 6;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-item:has(video):hover::after {
+  transform: translate(-50%, -50%) scale(1.08);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-fade-left,

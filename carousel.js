@@ -3,6 +3,14 @@ function initCarousel(carouselId, autoScrollDirection = 'right', autoScrollSpeed
   if (!container) return;
   const track = container.querySelector('.carousel-track');
   if (!track) return;
+
+  // Carousel videos are click-to-open thumbnails: drop the inline controls so a
+  // click opens the lightbox (where they play with full controls and sound).
+  track.querySelectorAll('video').forEach((video) => {
+    video.removeAttribute('controls');
+    video.muted = true;
+  });
+
   const originalItems = Array.from(track.querySelectorAll('.carousel-item'));
   const prevButton = container.querySelector('.carousel-prev');
   const nextButton = container.querySelector('.carousel-next');
@@ -26,11 +34,18 @@ function initCarousel(carouselId, autoScrollDirection = 'right', autoScrollSpeed
 
   const itemsToClone = Math.min(originalItems.length, Math.max(1, visibleItemsCount));
 
+  const makeClone = (item) => {
+    const clone = item.cloneNode(true);
+    clone.classList.add('carousel-clone');
+    clone.setAttribute('aria-hidden', 'true');
+    return clone;
+  };
+
   for (let i = 0; i < itemsToClone; i++) {
-    track.appendChild(originalItems[i].cloneNode(true));
+    track.appendChild(makeClone(originalItems[i]));
   }
   for (let i = 0; i < itemsToClone; i++) {
-    track.insertBefore(originalItems[originalItems.length - 1 - i].cloneNode(true), track.firstElementChild);
+    track.insertBefore(makeClone(originalItems[originalItems.length - 1 - i]), track.firstElementChild);
   }
 
   currentXOffset = -itemWidth * itemsToClone;

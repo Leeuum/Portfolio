@@ -343,8 +343,7 @@ footer {
 /* Lightbox Styles */
 .lightbox {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
@@ -355,33 +354,6 @@ footer {
   z-index: 1000; /* Ensure lightbox is above everything */
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  position: relative;
-  z-index: 1001; /* Ensure lightbox image is above the background */
-}
-
-.lightbox video {
-  max-width: 90%;
-  max-height: 90vh;
-  border-radius: 8px;
-  position: relative;
-  z-index: 1001;
-}
-
-.lightbox:after {
-  content: "×";
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  z-index: 1002; /* Ensure close button is above everything */
-}
-
 .lightbox.visible {
   visibility: visible;
   opacity: 1;
@@ -389,6 +361,107 @@ footer {
 
 .dark-mode .lightbox {
   background: rgba(0, 0, 0, 0.95); /* Even darker in dark mode */
+}
+
+.lightbox-stage {
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-stage img,
+.lightbox-stage video {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s ease, transform 0.15s ease;
+  z-index: 1002;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.lightbox-close {
+  top: 24px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.lightbox-close:active {
+  transform: scale(0.9);
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+}
+
+.lightbox-nav:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.lightbox-nav[hidden] {
+  display: none;
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+.lightbox-nav svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 600px) {
+  .lightbox-nav {
+    width: 44px;
+    height: 44px;
+  }
+  .lightbox-prev {
+    left: 10px;
+  }
+  .lightbox-next {
+    right: 10px;
+  }
+  .lightbox-close {
+    top: 14px;
+    right: 14px;
+  }
 }
 
 /* Adding a toggle switch style */

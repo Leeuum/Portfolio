@@ -1,15 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const cb = document.getElementById('checkbox');            // use one id everywhere
-  const txt = document.querySelector('.theme-switch-wrapper span');
+  const btn = document.getElementById('theme-toggle');
 
   const apply = mode => {
-    document.documentElement.classList.toggle('dark-mode', mode === 'dark');
-    cb.checked = mode === 'dark';
-    txt.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+    const dark = mode === 'dark';
+    document.documentElement.classList.toggle('dark-mode', dark);
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
     localStorage.setItem('theme', mode);
   };
 
   apply(document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light');
 
-  cb.addEventListener('change', () => apply(cb.checked ? 'dark' : 'light'));
-}); 
+  btn.addEventListener('click', () => {
+    apply(document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark');
+  });
+});
